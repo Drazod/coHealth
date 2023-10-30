@@ -1,23 +1,23 @@
 [
   {
-    "id": 0,
     "title": "Calculating BMI is easier",
     "iconSRC": "images/png/heartMedical.png",
     "iconAlt": "Heart Medical Icon",
-    "description": ""
+    "description": "",
+    "main": "true"
   },
   {
-    "id": 1,
     "title": "Find nearby hospital",
     "iconSRC": "images/png/hospital.png",
     "iconAlt": "Heart Medical Icon",
-    "description": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis,sem. Nulla consequat massa quis enim."
+    "description": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis,sem. Nulla consequat massa quis enim.",
+    "main": "false"
   },
   {
-    "id": 2,
     "title": "Interactive chatbot",
     "iconSRC": "images/png/chatbot.png",
     "iconAlt": "Heart Medical Icon",
-    "description": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis,sem. Nulla consequat massa quis enim."
+    "description": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis,sem. Nulla consequat massa quis enim.",
+    "main": "false"
   }
 ]

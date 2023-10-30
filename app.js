@@ -1,9 +1,20 @@
 const express = require('express');
-const homepageView = require('./js/viewModels/homepageView');
+const homePageRouter = require('./router/homePageRouter.js');
+const getDataRouter = require('./router/getDataRouter.js');
 const app = express();
 
-app.get('/', homepageView.renderPage);
+app.use(express.json());
+app.use(express.static(`${__dirname}/public`));
 
-const server = app.listen((port = 3000), () => {
-  console.log(`App running on port ${port}...`);
-});
+app.use('/', homePageRouter);
+app.use('/data', getDataRouter);
+// app.get('/data', (req,res)=>{
+//     res.status(200).json({
+//         status: "success",
+//         data:{
+//             name: "lmao"
+//         }
+//     })
+// });
+
+module.exports = app;

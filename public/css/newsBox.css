@@ -1,0 +1,44 @@
+.newsImage img {
+  width: 30vw;
+  margin: 0 2vh 0 0;
+}
+
+.newsTitle {
+  color: #000;
+  text-align: center;
+  font-family: Abhaya Libre ExtraBold;
+  font-size: 90px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 80px;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.newsContent {
+  color: #6f7cb2;
+  text-align: justify;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.firstContent {
+  width: 46vw;
+}
+
+.newsBox {
+  width: 80vw;
+  margin: auto;
+}
+
+.firstViewNewsContent {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}

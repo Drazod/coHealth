@@ -24,10 +24,14 @@
 }
 
 .features img {
-  width: 40px;
-  height: 40px;
+  width: 7vh;
+  height: 7vh;
 }
 
+.features img.icon-main {
+  width: 8vh;
+  height: 8vh;
+}
 .features-item-title {
   color: #000;
 
@@ -35,7 +39,7 @@
   font-size: 4vh;
   font-style: normal;
   font-weight: 800;
-  line-height: 50px; /* 148.148% */
+  line-height: 8vh; /* 148.148% */
   display: inline-block;
 }
 

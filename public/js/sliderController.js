@@ -1,6 +1,9 @@
+import { POSITION_DOTS, POSITION_SLIDER_CONTENT } from './config.js';
+
 const sliderImagesContainer = document.querySelector('.sliderImagesContainer');
 const dotsContainer = document.querySelector('.dotsContainer');
 const newsContainer = document.querySelector('.newsContainer');
+
 class Slider {
   #images;
   #length;
@@ -8,9 +11,18 @@ class Slider {
   #currentSlide;
   #time;
   _interval;
+  #leftFormatContent = `left: ${POSITION_SLIDER_CONTENT}; text-align: justify;`;
+  #rightFormatContent = `right: ${POSITION_SLIDER_CONTENT}; text-align: justify; direction: rtl`;
   _initActiveDot() {
     const activeDot = document.querySelector('.slider-dot');
-    activeDot.classList.add('active-dot');
+    if (activeDot) {
+      activeDot?.classList.add('active-dot');
+
+      dotsContainer.style = `bottom: calc(${
+        dotsContainer?.getBoundingClientRect().top -
+        newsContainer?.getBoundingClientRect().bottom
+      }px + ${POSITION_DOTS})`;
+    }
   }
   _setActiveDot() {
     const dots = document.querySelectorAll('.slider-dot');
@@ -34,9 +46,19 @@ class Slider {
     image.style.transform = `translateX(-${100 * this.#currentSlide}vw)`;
     this._setActiveDot();
   }
+  _moveContent(item) {
+    const sliderImageContent = item.querySelector('.sliderImageContent');
+    sliderImageContent.style.transform = `translateX(-${
+      100 * this.#currentSlide
+    }vw)`;
+  }
+  _move(item) {
+    this._moveSlide(item);
+    this._moveContent(item);
+  }
   _transitionSlide() {
     const sliderImagesItem = document.querySelectorAll('.sliderImagesItem');
-    sliderImagesItem.forEach((item) => this._moveSlide(item));
+    sliderImagesItem.forEach((item) => this._move(item));
   }
   _nextSlide() {
     ++this.#currentSlide;
@@ -51,30 +73,58 @@ class Slider {
     for (let i = 0; i < this.#length; ++i) {
       html += `<div class="slider-dot" id="${i}"></div>`;
     }
-    dotsContainer.insertAdjacentHTML('beforeend', html);
+    dotsContainer?.insertAdjacentHTML('beforeend', html);
     this._initActiveDot();
   }
 
   _createImage() {
     let html = '';
+
     this.#images.forEach(function (image) {
       html += `<div class="sliderImagesItem">
       <img
         class="sliderImage"
-        src="../${image.src}"
-        alt="${image.alt}"
-        id="${image.id}"
+        src="../${image.imgSRC}"
+        alt="${image.imgAlt}"
+        id="${image._id}"
+        style="${image.imgFormat}"
       />
+      
+      <div class="sliderImageContent ${image.descriptionPosition}">
+        <div class="sliderImageTitle">${image.name}</div>
+            <div class="sliderImageDescription">
+              ${image.description}
+            </div>
+          <button class="btn-slider-image" tabindex=-1>Read more</button>
+        </div>;
       </div>`;
     });
-    sliderImagesContainer.insertAdjacentHTML('afterbegin', html);
+    sliderImagesContainer?.insertAdjacentHTML('afterbegin', html);
+
     this.#currentSlide = 0;
   }
+  reAdjustContent() {
+    const sliderImageContent = document.querySelectorAll('.sliderImageContent');
+    sliderImageContent.forEach((content) => {
+      const contentHeight =
+        content?.getBoundingClientRect().bottom -
+        content?.getBoundingClientRect().top;
+      const containerHeight =
+        newsContainer?.getBoundingClientRect().bottom -
+        newsContainer?.getBoundingClientRect().top;
+
+      content.style = `top: ${(containerHeight - contentHeight) / 2}px; ${
+        content.classList.contains('left')
+          ? this.#leftFormatContent
+          : this.#rightFormatContent
+      }`;
+    });
+  }
   async _loadImage() {
-    await fetch(`./../../data/images-slider.json`)
+    await fetch(`/data/get-6-nearest-news`)
       .then((res, err) => res.json())
-      .then((res, err) => (this.#images = res))
-      .catch((err) => console.log('Can not load images'));
+      .then((res, err) => (this.#images = res.data.newsFound))
+      .catch((err) => console.log('Can not load images', err));
   }
   _dotsInteract() {
     const dots = document.querySelectorAll('.slider-dot');
@@ -93,13 +143,13 @@ class Slider {
     );
   }
   _hovering() {
-    newsContainer.addEventListener(
+    newsContainer?.addEventListener(
       'mouseover',
       function () {
         clearInterval(this._interval);
       }.bind(this)
     );
-    newsContainer.addEventListener('mouseout', this._autoMove.bind(this));
+    newsContainer?.addEventListener('mouseout', this._autoMove.bind(this));
   }
   _autoMove() {
     clearInterval(this._interval);
@@ -112,8 +162,10 @@ class Slider {
     this._createDots();
     this.setTime(5);
     this._dotsInteract();
+
     this._autoMove();
     this._hovering();
+    this.reAdjustContent();
   }
 }
 

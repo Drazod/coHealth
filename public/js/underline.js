@@ -1,4 +1,5 @@
 import { currentActive } from './navigationController.js';
+import { FONT_WEIGHT_NAVIGATION_ACTIVE } from './config.js';
 
 const underlineContainer = document.querySelector('.underline');
 const underlineBox = document.querySelector('.underline-box');
@@ -40,7 +41,7 @@ class underline {
     this.index = nav_items.findIndex(
       (foundNav) => nav.classList === foundNav.classList
     );
-    nav.style = 'font-weight: bold';
+    nav.style = `font-weight: ${FONT_WEIGHT_NAVIGATION_ACTIVE}`;
   }
   run() {
     this.render();

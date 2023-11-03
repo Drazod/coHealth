@@ -1,6 +1,6 @@
 const express = require('express');
-const newsSliderController = require('./../controller/newsSliderController.js');
-const featuresController = require('./../controller/featuresController.js');
+const newsSliderController = require('../controller/newsSliderController.js');
+const featuresController = require('../controller/featuresController.js');
 const router = express.Router();
 
 router.route('/get-6-nearest-news').get(newsSliderController.get6NearsestNews);

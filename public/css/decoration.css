@@ -25,3 +25,12 @@
   left: 0px;
   z-index: -1;
 }
+
+.chatIcon {
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+}

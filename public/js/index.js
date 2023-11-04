@@ -13,11 +13,11 @@ const init = async function () {
     window.location.pathname === '/aboutUs'
   ) {
     await Slider.run();
-    await Underline.run();
     await Features.render();
     await dropdownMenu();
     await Members.run();
     await AboutUs.moveTo();
   }
+  await Underline.run();
 };
 init();

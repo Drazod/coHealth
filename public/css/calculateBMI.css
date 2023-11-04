@@ -2,15 +2,40 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
+.calculateContent {
+  width: 50vw;
+}
+.calculateImage {
+  width: 40vw;
+}
+.eating-donuts-image {
+  width: 100%;
+}
 .calculateBMITitle {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: start;
+
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 8vh;
+  font-style: normal;
+
+  line-height: 180%;
+  letter-spacing: 1.28px;
+}
+
+.calculateBMITitle--1 {
+  font-weight: 400;
+}
+.calculateBMITitle--2 {
+  font-weight: 700;
 }
 
 .calculateBMISubTitle {
@@ -18,4 +43,81 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: start;
+
+  color: #000;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 6.5vh;
+  font-style: normal;
+
+  line-height: 180%; /* 90px */
+  letter-spacing: 1px;
+  opacity: 0.7;
+}
+
+.calculateBMISubTitle--1 {
+  font-weight: 400;
+}
+
+.calculateBMISubTitle--2 {
+  font-weight: 700;
+}
+
+.inputBMIForm {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  width: 30vw;
+  margin-top: 10vh;
+}
+
+.form_row {
+  height: 6vh;
+  margin-left: 2.5vw;
+  margin-right: 2.5vw;
+  margin-bottom: 5vh;
+}
+
+.form_input {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  border: none;
+  border-radius: 1.5vh;
+  text-indent: 1vw;
+  background: #eaf0f7;
+}
+
+.formAge {
+  width: 8vw;
+}
+
+.formGender {
+  width: 12vw;
+}
+
+.formHeight {
+  width: 14vw;
+}
+
+.formWeight {
+  width: 6vw;
+}
+
+.formSubmit {
+  width: 18vw;
+  text-indent: 0px;
+  border-radius: 2vh;
+  background: linear-gradient(91deg, #3a8ef6 0%, #6f3afa 99.99%);
+
+  box-shadow: 0px 11.85116px 20.73954px 3.95039px rgba(68, 97, 242, 0.15);
+  color: #fff;
+
+  font-family: Abhaya Libre ExtraBold;
+  font-size: 3vh;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 2.7px;
 }

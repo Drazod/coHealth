@@ -20,11 +20,7 @@
       <div class="eclipse-1"></div>
       <div class="eclipse-2"></div>
       <div class="chat-icon">
-        <img
-          src="../images/png/chat-icon.png"
-          alt="Chat Icon"
-          class="chatIcon"
-        />
+        <img src="../images/png/chatbot.png" alt="Chat Icon" class="chatIcon" />
       </div>
     </div>
 
@@ -123,16 +119,49 @@
     <div class="calculateBMIBody">
       <div class="calculateContent">
         <div class="calculateBMITitle">
-          <div class="calculateBMITitle--1">Check your &nbsp;</div>
+          <div class="calculateBMITitle--1">Check your&nbsp;</div>
           <div class="calculateBMITitle--2">BMI</div>
         </div>
         <div class="calculateBMISubTitle">
-          <div class="calculateBMISubTitle--1">Get &nbsp;</div>
+          <div class="calculateBMISubTitle--1">Get&nbsp;</div>
           <div class="calculateBMISubTitle--2">Personalized Advice</div>
+        </div>
+        <div class="calculateBMIForm">
+          <form class="inputBMIForm">
+            <div class="form_row formAge">
+              <input class="form_input formInputAge" placeholder="Age" />
+            </div>
+            <div class="form_row formGender">
+              <select class="form_input formInputGender">
+                <option value="" disabled selected>Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div class="form_row formHeight">
+              <input class="form_input formInputHeight" placeholder="Height" />
+            </div>
+            <div class="form_row">
+              <input
+                class="form_input formWeight formInputWeight"
+                placeholder="Weight"
+              />
+            </div>
+            <div class="form_row formSubmit">
+              <input
+                type="submit"
+                class="form_input formSubmit"
+                value="Calculate"
+              />
+            </div>
+          </form>
         </div>
       </div>
       <div class="calculateImage">
-        <img src="./../images/png/eating-donuts.png" />
+        <img
+          class="eating-donuts-image"
+          src="./../images/png/eating-donuts.png"
+        />
       </div>
     </div>
   </body>

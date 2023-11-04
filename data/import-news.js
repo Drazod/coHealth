@@ -3,7 +3,7 @@ dotenv.config({ path: './config.env' });
 
 const mongoose = require('mongoose');
 const fs = require('fs');
-const news = require('./../db/images_slider_schema.js');
+const news = require('../db/news_schema.js');
 
 const DB = process.env.DATABASE.replace(
   '<PASSWORD>',

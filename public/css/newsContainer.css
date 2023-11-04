@@ -41,7 +41,7 @@
 .sliderImage {
   filter: blur(2px);
   -webkit-filter: blur(2px);
-  filter: brightness(80%);
+  filter: brightness(70%);
 }
 
 .sliderImageDescription {

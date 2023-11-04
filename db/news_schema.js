@@ -26,6 +26,11 @@ const newsSchema = new mongoose.Schema({
     trim: true,
     required: [true, 'A news must have a description!'],
   },
+  sliderContent: {
+    type: String,
+    trim: true,
+    required: [true, 'A news must have some content to add to slider!'],
+  },
   descriptionPosition: {
     type: String,
     enum: ['right', 'left'],

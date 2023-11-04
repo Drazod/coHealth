@@ -93,7 +93,7 @@ class Slider {
       <div class="sliderImageContent ${image.descriptionPosition}">
         <div class="sliderImageTitle">${image.name}</div>
             <div class="sliderImageDescription">
-              ${image.description}
+              ${image.sliderContent}
             </div>
           <button class="btn-slider-image" tabindex=-1>Read more</button>
         </div>;
@@ -123,7 +123,10 @@ class Slider {
   async _loadImage() {
     await fetch(`/data/get-6-nearest-news`)
       .then((res, err) => res.json())
-      .then((res, err) => (this.#images = res.data.newsFound))
+      .then((res, err) => {
+        this.#images = res.data.newsFound;
+        return res.data.newsFound;
+      })
       .catch((err) => console.log('Can not load images', err));
   }
   _dotsInteract() {

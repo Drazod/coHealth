@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coHealth</title>
+    <link rel="stylesheet" href="../css/body.css" />
+    <link rel="stylesheet" href="../css/navigation.css" />
+    <link rel="stylesheet" href="../css/languageDropdownMenu.css" />
+    <link rel="stylesheet" href="../css/decoration.css" />
+    <link rel="stylesheet" href="../css/newsBox.css" />
+    <link rel="stylesheet" href="../css/newsItems.css" />
+
+    <script type="module" defer src="../js/index.js"></script>
+  </head>
+  <body>
+    <div class="decoration">
+      <div class="eclipse-1"></div>
+      <div class="eclipse-2"></div>
+      <div class="chat-icon">
+        <img src="../images/png/chatbot.png" alt="Chat Icon" class="chatIcon" />
+      </div>
+    </div>
+
+    <div class="navigation">
+      <div class="logo">coHealth</div>
+      {%NAVIGATION_BAR%} {%LANGUAGE_SELECTION%} {%SIGN_IN_BUTTON%}
+      {%REGISTER_BUTTON%}
+    </div>
+
+    <div class="newsContainer">
+      <div class="searchBar"></div>
+      <div class="newsContainerTitle">NEWS</div>
+      <div class="newsItemsContainer"></div>
+    </div>
+  </body>
+</html>

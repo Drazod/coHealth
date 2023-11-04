@@ -9,3 +9,33 @@ body {
   margin: 0px;
   padding: 0px;
 }
+
+@font-face {
+  font-family: 'AbeeZee';
+  src: url('./font/ABeeZee-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Abhaya Libre ExtraBold';
+  src: url('./font/AbhayaLibre-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: 'Abhaya Libre SemiBold';
+  src: url('./font/AbhayaLibre-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Abhaya Libre Medium';
+  src: url('./font/AbhayaLibre-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./font/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('./font/Poppins-Regular.ttf');
+}

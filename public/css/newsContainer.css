@@ -35,7 +35,7 @@
   font-size: 5.5vh;
   font-style: normal;
   font-weight: 800;
-  line-height: 80px; /* 148.148% */
+  line-height: 10vh; /* 148.148% */
 }
 
 .sliderImage {
@@ -51,7 +51,7 @@
   font-size: 3vh;
   font-style: normal;
   font-weight: 800;
-  line-height: 25px; /* 86.207% */
+  line-height: 4vh; /* 86.207% */
   margin-top: 2vh;
   margin-bottom: 3vh;
 }

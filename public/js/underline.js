@@ -1,9 +1,4 @@
-import { FONT_WEIGHT_NAVIGATION_ACTIVE } from './config.js';
-
-const underlineContainer = document.querySelector('.underline');
-const underlineBox = document.querySelector('.underline-box');
 const nav_links = Array.from(document.querySelectorAll('.nav_links'));
-const nav_items = Array.from(document.querySelectorAll('.nav-item'));
 
 class Underline {
   index;
@@ -65,7 +60,7 @@ class Underline {
     // console.log(this.index);
     return index;
   }
-  run() {
+  async run() {
     // console.log(window.location.pathname);
     // console.log(nav_links);
     this.setLocalStorage(this.getIndex());

@@ -1,0 +1,59 @@
+.aboutUsTitle {
+  margin-bottom: 10vh;
+  background: linear-gradient(96deg, #3a8ef6 -10.84%, #6f3afa 196.74%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: ABeeZee;
+  font-size: 10vh;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+
+.aboutUsBox {
+  padding-top: 10vh;
+}
+
+.aboutUsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.member {
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-bottom: 10vh;
+  color: #000;
+  font-family: Abhaya Libre ExtraBold;
+  font-style: normal;
+  line-height: 7vh;
+  text-align: center;
+  width: 20vw;
+  height: 50vh;
+}
+
+.memberImage img {
+  width: 100%;
+  height: 100%;
+}
+
+.memberImage {
+  width: 15vw;
+  height: 30vh;
+  margin: auto;
+}
+
+.memberName {
+  font-weight: 800;
+  font-size: 3.5vh;
+}
+
+.description {
+  font-size: 2.5vh;
+  height: 100%;
+}

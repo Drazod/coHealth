@@ -21,7 +21,7 @@ const renderLanguage = function () {
     language.dataset.language[0].toUpperCase() +
     language.dataset.language.slice(1);
 };
-export default function () {
+export default async function () {
   language.addEventListener('click', renderLanguage);
 
   dropdownContent.addEventListener('click', function (e) {

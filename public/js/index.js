@@ -1,14 +1,23 @@
 import dropdownMenu from './languageDropDownMenu.js';
 // import navigation from './navigationController.js';
 import Underline from './underline.js';
-import slider from './sliderController.js';
-import features from './featuresController.js';
+import Slider from './sliderController.js';
+import Features from './featuresController.js';
+import Members from './membersController.js';
+import AboutUs from './aboutUsController.js';
 
-const init = function () {
+const init = async function () {
   // navigation.updateClick();
-  slider.run();
-  Underline.run();
-  features.render();
-  dropdownMenu();
+  if (
+    window.location.pathname === '/home' ||
+    window.location.pathname === '/aboutUs'
+  ) {
+    await Slider.run();
+    await Underline.run();
+    await Features.render();
+    await dropdownMenu();
+    await Members.run();
+    await AboutUs.moveTo();
+  }
 };
 init();
